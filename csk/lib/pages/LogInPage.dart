@@ -1,4 +1,5 @@
 import 'package:csk/components/button.dart';
+import 'package:csk/components/squiretile.dart';
 import 'package:csk/components/textfield.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +17,7 @@ class Loginpage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFCECFD1),
+      backgroundColor: Color.fromARGB(255, 241, 195, 235),
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -27,7 +28,7 @@ class Loginpage extends StatelessWidget {
                 'images/csk.jpg', // Replace with your image path
                 height: 100, // in logical pixels
                 width: 100,
-                fit: BoxFit.cover,
+                fit: BoxFit.cover,// means that the image will be scaled to fit the container while maintaining its aspect ratio
               ),
             ),
 
@@ -39,8 +40,9 @@ class Loginpage extends StatelessWidget {
               'Welcome back, you\'ve been missed!',
               style: TextStyle(
                 fontSize: 20,
-                fontWeight: FontWeight.bold,
+                fontWeight: FontWeight.w600,
                 color: Colors.black,
+                fontStyle: FontStyle.italic,
               ),
             ),
             SizedBox(height: 20),
@@ -66,14 +68,26 @@ class Loginpage extends StatelessWidget {
             SizedBox(height: 20),
 
             //forgot password?
-            TextButton(
-              onPressed: () {},
-              child: Text(
-                'Forgot Password?',
-                style: TextStyle(color: Colors.black, fontSize: 16),
-              ),
-            ),
-            SizedBox(height: 20),
+          Row(
+  mainAxisAlignment: MainAxisAlignment.end,
+  children: [
+Padding(
+  padding: const EdgeInsets.all(15.0),
+  child: Text(
+    'Forgot Password?',
+    style: TextStyle(
+      color: Colors.blue,
+      fontSize: 16,
+      fontStyle: FontStyle.italic,
+      fontWeight: FontWeight.bold,
+      //underline
+      decoration: TextDecoration.underline,
+      decorationColor: Colors.blue,
+    ),
+  ),
+)
+  ],
+          ),
 
             //sign in button
             MyButton(onTap: SignIn),
@@ -120,9 +134,57 @@ Padding(
 ),
             SizedBox(height: 20),
 
-            //google and apple buttons
+Row(
+  mainAxisAlignment: MainAxisAlignment.center,
+  children: [
+                //google buttons
+            Squiretile(imagePath: 'images/google.png'),
+            SizedBox(height: 20),
+SizedBox(width: 10),
+            //apple button
+            Squiretile(imagePath: 'images/apple.png'),
+            SizedBox(height: 15),
+  ],
+),
 
-            //not a member? register now
+
+
+
+
+           
+      //not a member? register now
+Row(
+  mainAxisAlignment: MainAxisAlignment.center,
+  children: [
+    Padding(
+      padding: EdgeInsets.all(8.0),
+      child: Text(
+        'Not a member?',
+        style: TextStyle(
+          color: Colors.black,
+          fontSize: 16,
+          fontStyle: FontStyle.italic,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    ),
+    SizedBox(width: 5), // Moved outside the Padding widget
+    Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Text(
+        'Register Now',
+        style: TextStyle(
+          color: Colors.blue,
+          fontSize: 16,
+          fontStyle: FontStyle.italic,
+          fontWeight: FontWeight.bold,
+          decoration: TextDecoration.underline,
+          decorationColor: Colors.blue,
+        ),
+      ),
+    ),
+  ],
+),
           ],
         ),
       ),

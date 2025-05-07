@@ -44,11 +44,14 @@ class MyTextfield extends StatelessWidget {
           ),
           labelText: labelText,
           prefixIcon: prefixIcon, // Add an icon to the left of the text field
+          prefixIconColor: Colors.blue,
+          // style the prefix icon color
+          //iconColor: Colors.blue,
           enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(color: Colors.grey),
             borderRadius: BorderRadius.circular(10.0),
           ),
-          focusedBorder: OutlineInputBorder(
+          focusedBorder: UnderlineInputBorder(
             borderSide: BorderSide(color: Colors.blue),
             borderRadius: BorderRadius.circular(10.0),
           ),
