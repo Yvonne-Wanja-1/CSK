@@ -90,7 +90,9 @@ Padding(
           ),
 
             //sign in button
-            MyButton(onTap: SignIn),
+            MyButton(
+              onTap: SignIn,
+              ),
             SizedBox(height: 20),
 
             //or continue with
@@ -148,7 +150,7 @@ SizedBox(width: 10),
 ),
 
 
-
+ 
 
 
            
